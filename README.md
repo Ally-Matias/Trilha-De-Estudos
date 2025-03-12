@@ -22,12 +22,17 @@ Este repositório é uma **Trilha de Estudos** que reúne meus aprendizados e pr
 
 - **Objetivo:** Estudar e avançar nos conhecimentos sobre estruturas de dados.
 - **Tópicos Abordados:**
-  - Arrays
-  - Pilhas e Filas
-  - Listas Ligadas e Listas Duplamente Ligadas
-  - Conjuntos, Dicionários e Hashes
-  - Árvores e Grafos
-  - Algoritmos de Ordenação
+  - [x] Arrays
+  - [x] Pilhas
+  - [x] Filas
+  - [ ] Listas Ligadas
+  - [ ] Listas Duplamente Ligadas
+  - [ ] Conjuntos
+  - [ ] Dicionários
+  - [ ] Hashes
+  - [ ] Árvores
+  - [ ] Grafos
+  - [ ] Algoritmos de Ordenação
 
 ### 2. LeetCode
 
@@ -42,7 +47,7 @@ Este repositório é uma **Trilha de Estudos** que reúne meus aprendizados e pr
 ## Próximos Tópicos (Em Breve)
 
 - [x] Estrutura de Dados
-- [x] LeetCode
+- [ ] LeetCode
 - [ ] System Design
 - [ ] Injeção de Dependência
 - [ ] Design Patterns (GoF)
