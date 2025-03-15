@@ -25,9 +25,9 @@ Este repositório é uma **Trilha de Estudos** que reúne meus aprendizados e pr
   - [x] Arrays
   - [x] Pilhas
   - [x] Filas
-  - [ ] Listas Ligadas
-  - [ ] Listas Duplamente Ligadas
-  - [ ] Conjuntos
+  - [x] Listas Ligadas
+  - [x] Listas Duplamente Ligadas
+  - [x] Conjuntos
   - [ ] Dicionários
   - [ ] Hashes
   - [ ] Árvores
