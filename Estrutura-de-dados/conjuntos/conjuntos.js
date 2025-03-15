@@ -85,6 +85,21 @@ function Set() {
 
     return differenceSet;
   };
+
+  this.subset = function (otherSet) {
+    // verifica se um conjunto é subconjunto de outro
+    if (this.size() > otherSet.size()) {
+      return false;
+    } else {
+      var values = this.values();
+      for (var i = 0; i < values.length; i++) {
+        if (!otherSet.has(values[i])) {
+          return false;
+        }
+      }
+      return true;
+    }
+  };
 }
 
 var set = new Set();
