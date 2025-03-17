@@ -28,11 +28,14 @@ Este repositório é uma **Trilha de Estudos** que reúne meus aprendizados e pr
   - [x] Listas Ligadas
   - [x] Listas Duplamente Ligadas
   - [x] Conjuntos
-  - [ ] Dicionários
-  - [ ] Hashes
+  - [x] Dicionários
+  - [x] Hashes
   - [ ] Árvores
   - [ ] Grafos
   - [ ] Algoritmos de Ordenação
+  
+- **Livro sobre estrutura de dados** 
+[Livro](https://www.google.com.br/books/edition/Estruturas_de_dados_e_algoritmos_em_Java/LRiYDgAAQBAJ?hl=pt-BR&gbpv=1&pg=PA5&printsec=frontcover)
 
 ### 2. LeetCode
 
