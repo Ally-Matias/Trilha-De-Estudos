@@ -34,7 +34,7 @@ Este repositório é uma **Trilha de Estudos** que reúne meus aprendizados e pr
   - [ ] Grafos
   - [ ] Algoritmos de Ordenação
   
-- **Livro sobre estrutura de dados** 
+- **Livro sobre estrutura de dados:** 
 [Livro](https://www.google.com.br/books/edition/Estruturas_de_dados_e_algoritmos_em_Java/LRiYDgAAQBAJ?hl=pt-BR&gbpv=1&pg=PA5&printsec=frontcover)
 
 ### 2. LeetCode
