@@ -30,8 +30,8 @@ Este repositório é uma **Trilha de Estudos** que reúne meus aprendizados e pr
   - [x] Conjuntos
   - [x] Dicionários
   - [x] Hashes
-  - [ ] Árvores
-  - [ ] Grafos
+  - [x] Árvores
+  - [x] Grafos
   - [ ] Algoritmos de Ordenação
   
 - **Livro sobre estrutura de dados:** 
