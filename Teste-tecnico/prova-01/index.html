@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processador de Números de Série</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="logo_tecgraf_og.ico" />
+</head>
+<body>
+    <div class="container">
+        <h1>Processador de Números de Série</h1>
+
+        <!-- Tarefa 1: Gerar números de série com DV -->
+        <div class="section">
+            <h2>1. Gerar Números de Série com DV</h2>
+            <p>Carregue o arquivo <strong>serieSemDV.txt</strong> para gerar os números de série completos com o dígito verificador.</p>
+            <input type="file" id="inputSemDV" accept=".txt">
+            <button onclick="generateSerialWithDV()">Processar</button>
+            <a id="downloadSemDV" class="hidden" download="serieComDV.txt">Baixar serieComDV.txt</a>
+        </div>
+
+        <!-- Tarefa 2: Verificar números de série -->
+        <div class="section">
+            <h2>2. Verificar Números de Série</h2>
+            <p>Carregue o arquivo <strong>serieParaVerificar.txt</strong> para verificar a validade dos números de série.</p>
+            <input type="file" id="inputParaVerificar" accept=".txt">
+            <button onclick="verifySerialNumbers()">Processar</button>
+            <a id="downloadVerificada" class="hidden" download="serieVerificada.txt">Baixar serieVerificada.txt</a>
+        </div>
+
+        <!-- Tarefa 3: Gerar relatório de automóveis por país -->
+        <div class="section">
+            <h2>3. Gerar Relatório de Automóveis por País</h2>
+            <p>Carregue os arquivos <strong>serieParaRelatorio.txt</strong> e <strong>paises.txt</strong> para gerar o relatório de automóveis por país.</p>
+            <input type="file" id="inputParaRelatorio" accept=".txt">
+            <input type="file" id="inputPaises" accept=".txt">
+            <button onclick="generateReport()">Processar</button>
+            <a id="downloadRelatorio" class="hidden" download="listaTotais.txt">Baixar listaTotais.txt</a>
+        </div>
+    </div>
+
+    <script>
+        function calculateDV(baseSerial) {
+            let sum = 0;
+            for (let char of baseSerial) {
+                sum += char.charCodeAt(0);
+            }
+            let remainder = sum % 16;
+            return remainder.toString(16).toUpperCase();
+        }
+
+        function loadCountryMap(content) {
+            const lines = content.split('\n');
+            const countryMap = {};
+            lines.forEach(line => {
+                const [code, name] = line.split(';').map(s => s.trim());
+                if (code && name) {
+                    countryMap[code] = name;
+                }
+            });
+            return countryMap;
+        }
+
+        function generateSerialWithDV() {
+            const input = document.getElementById('inputSemDV');
+            const file = input.files[0];
+            if (!file) {
+                alert('Selecione o arquivo serieSemDV.txt');
+                return;
+            }
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const content = event.target.result;
+                const lines = content.split('\n');
+                const outputLines = lines.map(line => {
+                    const baseSerial = line.trim().substring(0, 14);
+                    const dv = calculateDV(baseSerial);
+                    return baseSerial + '-' + dv;
+                });
+                const outputContent = outputLines.join('\n');
+                const blob = new Blob([outputContent], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const downloadLink = document.getElementById('downloadSemDV');
+                downloadLink.href = url;
+                downloadLink.classList.remove('hidden');
+                downloadLink.click();
+            };
+            reader.readAsText(file);
+        }
+
+        function verifySerialNumbers() {
+            const input = document.getElementById('inputParaVerificar');
+            const file = input.files[0];
+            if (!file) {
+                alert('Selecione o arquivo serieParaVerificar.txt');
+                return;
+            }
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const content = event.target.result;
+                const lines = content.split('\n');
+                const outputLines = lines.map(line => {
+                    const serial = line.trim();
+                    if (serial.length === 16 && serial[14] === '-') {
+                        const baseSerial = serial.substring(0, 14);
+                        const providedDV = serial[15];
+                        const calculatedDV = calculateDV(baseSerial);
+                        const result = providedDV === calculatedDV ? 'verdadeiro' : 'falso';
+                        return serial + ' ' + result;
+                    }
+                    return serial + ' inválido';
+                });
+                const outputContent = outputLines.join('\n');
+                const blob = new Blob([outputContent], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const downloadLink = document.getElementById('downloadVerificada');
+                downloadLink.href = url;
+                downloadLink.classList.remove('hidden');
+                downloadLink.click();
+            };
+            reader.readAsText(file);
+        }
+
+        function generateReport() {
+            const inputRelatorio = document.getElementById('inputParaRelatorio');
+            const inputPaises = document.getElementById('inputPaises');
+            const fileRelatorio = inputRelatorio.files[0];
+            const filePaises = inputPaises.files[0];
+            if (!fileRelatorio || !filePaises) {
+                alert('Selecione ambos os arquivos: serieParaRelatorio.txt e paises.txt');
+                return;
+            }
+            const readerRelatorio = new FileReader();
+            const readerPaises = new FileReader();
+            readerPaises.onload = function(eventPaises) {
+                const countryContent = eventPaises.target.result;
+                const countryMap = loadCountryMap(countryContent);
+                readerRelatorio.onload = function(eventRelatorio) {
+                    const serialContent = eventRelatorio.target.result;
+                    const lines = serialContent.split('\n');
+                    const autoCount = {};
+                    lines.forEach(line => {
+                        const serial = line.trim();
+                        if (serial.length === 16 && serial[14] === '-') {
+                            const baseSerial = serial.substring(0, 14);
+                            const type = baseSerial[9];
+                            if (type === 'A') {
+                                const countryCode = baseSerial.substring(4, 7);
+                                const countryName = countryMap[countryCode];
+                                if (countryName) {
+                                    autoCount[countryName] = (autoCount[countryName] || 0) + 1;
+                                }
+                            }
+                        }
+                    });
+                    const sortedCountries = Object.entries(autoCount).sort((a, b) => a[0].localeCompare(b[0]));
+                    const outputLines = sortedCountries.map(([country, count]) => `${country}-${count}`);
+                    const outputContent = outputLines.join('\n');
+                    const blob = new Blob([outputContent], { type: 'text/plain' });
+                    const url = URL.createObjectURL(blob);
+                    const downloadLink = document.getElementById('downloadRelatorio');
+                    downloadLink.href = url;
+                    downloadLink.classList.remove('hidden');
+                    downloadLink.click();
+                };
+                readerRelatorio.readAsText(fileRelatorio);
+            };
+            readerPaises.readAsText(filePaises);
+        }
+    </script>
+</body>
+</html>

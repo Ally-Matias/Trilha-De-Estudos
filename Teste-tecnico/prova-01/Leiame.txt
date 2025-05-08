@@ -1,0 +1,22 @@
+Processador de Números de Série
+
+Esta pasta contém todos os sete arquivos de entrada e saída necessários para as três tarefas descritas. Os arquivos estão localizados na pasta "Teste-tecnico". Para testar ou regenerar os arquivos de saída, siga os passos abaixo:
+
+1. Abra o arquivo `index.html` em um navegador web.
+
+2. **Tarefa 1: Gerar Números de Série com DV**
+   - Carregue o arquivo `serieSemDV.txt` da pasta.
+   - Clique em "Processar".
+   - O arquivo `serieComDV.txt` será gerado e baixado automaticamente.
+
+3. **Tarefa 2: Verificar Números de Série**
+   - Carregue o arquivo `serieParaVerificar.txt` da pasta.
+   - Clique em "Processar".
+   - O arquivo `serieVerificada.txt` será gerado e baixado automaticamente.
+
+4. **Tarefa 3: Gerar Relatório de Automóveis por País**
+   - Carregue os arquivos `serieParaRelatorio.txt` e `paises.txt` da pasta.
+   - Clique em "Processar".
+   - O arquivo `listaTotais.txt` será gerado e baixado automaticamente.
+
+Os arquivos de saída já estão incluídos na pasta "Saidas" como exemplos. Você pode sobrescrevê-los ao executar o programa, mas os nomes dos arquivos gerados corresponderão exatamente aos especificados.
