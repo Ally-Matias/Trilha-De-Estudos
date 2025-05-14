@@ -50,7 +50,7 @@ Este repositório é uma **Trilha de Estudos** que reúne meus aprendizados e pr
 ## Próximos Tópicos (Em Breve)
 
 - [x] Estrutura de Dados
-- [ ] LeetCode
+- [ ] LeetCode - 11/50
 - [ ] System Design
 - [ ] Injeção de Dependência
 - [ ] Design Patterns (GoF)
