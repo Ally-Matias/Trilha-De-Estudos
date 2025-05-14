@@ -47,6 +47,13 @@ Este repositório é uma **Trilha de Estudos** que reúne meus aprendizados e pr
     [Acesse aqui](https://leetcode.com/studyplan/top-interview-150/)
 - **Ferramenta:** [LeetCode](https://leetcode.com/)
 
+### 2. System Design
+
+- **Objetivo:** Estudar e avançar nos conhecimentos sobre System Design.
+- **Introdução:**
+  - Playlist: [System Design - Emerging Code](https://www.youtube.com/playlist?list=PLFmBNfkCoVHJq7FfY8MyZfEZGE4JIaUkW)
+
+
 ## Próximos Tópicos (Em Breve)
 
 - [x] Estrutura de Dados
