@@ -14,7 +14,7 @@
 
 <br>
 
-Este repositório é uma **Trilha de Estudos** que reúne meus aprendizados e práticas. Atualmente, a trilha abrange dois tópicos iniciais, mas novos temas serão adicionados conforme eu avançar nos estudos. Inicialmente, estou focando em JavaScript, aproveitando que encontrei um bom material disponível, mas pretendo migrar para TypeScript futuramente.
+Este repositório é uma **Trilha de Estudos** que reúne meus aprendizados e práticas. Atualmente, a trilha abrange dois tópicos iniciais, mas novos temas serão adicionados conforme eu avançar nos estudos.
 
 ## Tópicos Iniciais
 
