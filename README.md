@@ -53,11 +53,16 @@ Este repositório é uma **Trilha de Estudos** que reúne meus aprendizados e pr
 - **Introdução:**
   - Playlist: [System Design - Emerging Code](https://www.youtube.com/playlist?list=PLFmBNfkCoVHJq7FfY8MyZfEZGE4JIaUkW)
 
+### 2. Angular
+- **Objetivo:** Estudar e avançar nos conhecimentos sobre Angular.
+- **Curso:**
+  - Playlist: [Angular 17 - Ralf Lima](https://youtube.com/playlist?list=PLWXw8Gu52TRKj3tFWHlkheh8rLQRqQ1__&si=zQj1ZTLpDEans7um)
 
-## Próximos Tópicos (Em Breve)
+## Próximos Tópicos
 
 - [x] Estrutura de Dados
 - [ ] LeetCode - 11/50
+- [ ] Angular
 - [ ] System Design
 - [ ] Injeção de Dependência
 - [ ] Design Patterns (GoF)
