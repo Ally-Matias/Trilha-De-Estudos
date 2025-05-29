@@ -18,4 +18,7 @@ export class Componente04 {
       this.exibir = true;
     }
   }
+
+  //Ngfor
+  nomes: string[] = ['Aria', 'Bruna', 'Lívia', 'Carla'];
 }
