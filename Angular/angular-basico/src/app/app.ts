@@ -5,10 +5,11 @@ import { Componente02 } from './componente02/componente02';
 import { Componente03 } from './componente03/componente03';
 import { Componente04 } from './componente04/componente04';
 import { Componente05 } from "./componente05/componente05";
+import { Componente06 } from "./componente06/componente06";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Componente01, Componente02, Componente03, Componente04, Componente05],
+  imports: [RouterOutlet, Componente01, Componente02, Componente03, Componente04, Componente05, Componente06],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

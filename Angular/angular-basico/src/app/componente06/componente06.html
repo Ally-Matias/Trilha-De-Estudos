@@ -1,0 +1,27 @@
+<p>-------------------</p>
+<h1>Componente 04 (Control Flow) </h1>
+@if(media >= 7){
+  <p>Aprovado(a)</p>
+}@else if (media >= 5) {
+  <p>em exame</p>
+}@else {
+  <p>Reprovado(a)</p>
+}
+
+
+@for (n of nomes; track $index) {
+  <p>{{$index}} - {{n}}</p>
+}
+
+
+@switch (linguagem) {
+  @case ('HTML') {
+    <p>Linguagem de marcação</p>
+  }@case ('CSS') {
+    <p>Linguagem de estilização</p>
+  }@case ('Javascript') {
+    <p>Linguagem de programação</p>
+  }@default {
+    <p>Linguagem não encontrada</p>
+  }
+}
